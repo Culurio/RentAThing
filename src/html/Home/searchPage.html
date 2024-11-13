@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentStuff - Your Rental Solution</title>
+  <link rel="stylesheet" href="searchPage.css">
+  <script src="items.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1 class="logo">RentStuff</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#about">How It Works</a></li>
+          <li><a href="#contact">Contact</a> </li>
+        </ul>
+      </nav>
+      <div class="auth-links">
+        <a href="login.html">Login</a> | 
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <input type="text" placeholder="Search for items..." class="search-bar">
+    <input type="date" placeholder="From" class="From">
+    <input type="date" placeholder="To" class="To">
+  </section>
+
+  <section id="filter" class="filter">
+    <div class="filter-bar">
+      <label for="category-filter">Filter by Category:</label>
+      <select id="category-filter">
+          <option value="all">All Categories</option>
+          <option value="house">House</option>
+          <option value="camera">Camera</option>
+          <option value="tools">Tools</option>
+          <option value="music">Music</option>
+          <option value="car">Car</option>
+          <option value="others">Others</option>
+      </select>
+  </div>
+  <div class="orderBy">
+    <label for="category-filter">Order By:</label>
+    <select id="category-filter">
+        <option value="None">None</option>
+        <option value="Best-Renters">Best-Renters</option>
+        <option value="Price: High-Low">Price: High-Low</option>
+        <option value="Price: Low-High">Price: Low-High</option>
+    </select>
+</div>
+  </section>
+
+  <section id="Rents" class="Rents">
+    <div class="product-list" id="product-list"></div>
+    <script>getItems()</script>
+  </section>
+
+  <!-- Popular Categories -->
+  <section id="categories" class="categories">
+    <h3>Popular Categories</h3>
+    <div class="category-list">
+      <div class="category-item">Party & Events</div>
+      <div class="category-item">Electronics</div>
+      <div class="category-item">Furniture & Decor</div>
+      <div class="category-item">Outdoor & Camping</div>
+      <div class="category-item">Tools & Equipment</div>
+    </div>
+  </section>
+
+  <!-- Product Listing -->
+  <section id="products" class="products">
+    <h3>Featured Products</h3>
+    <div class="product-grid">
+      <!-- Product Card Example -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product Image">
+        <h4>Projector</h4>
+        <p>From $20/day</p>
+        <button class="rent-now-btn">Rent Now</button>
+      </div>
+      <!-- Add more product cards as needed -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 RentStuff. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
