@@ -5,44 +5,6 @@
     box-sizing: border-box;
   }
   
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  .navbar ul li {
-    margin: 0 15px;
-  }
-  
-  .navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  .auth-links {
-    margin-left: auto;
-  }
-  
-  .auth-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-  }
-  
-  .auth-links a:hover {
-    text-decoration: underline;
-  }
   /* Hero Section */
   .hero {
     background: url('https://via.placeholder.com/1920x500') center/cover no-repeat;
