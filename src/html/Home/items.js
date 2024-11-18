@@ -9,6 +9,7 @@ function applyFilters() {
   }
   
   function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
+    console.log("BOAS")
     fetch('DB/products.JSON')
       .then(response => response.json())
       .then(products => {
