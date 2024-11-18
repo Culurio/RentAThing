@@ -203,3 +203,52 @@
   width: 80%;
   max-width: 400px;
 }
+
+/* Basic styling for the product-list and rental-item cards */
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.rental-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.rental-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.rental-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.rental-item h2 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.rental-item p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.rental-item p:last-of-type {
+  font-weight: bold;
+  color: #111;
+}
