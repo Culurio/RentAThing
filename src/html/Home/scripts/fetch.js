@@ -3,8 +3,30 @@ function loadHeader() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
+            account();
         })
         .catch(error => console.error('Error loading header:', error));
+}
+
+function isLoggedIn() {
+    return localStorage.getItem('user') !== null;
+}
+
+function account() {
+    const account = document.getElementById('auth-links');
+    if (isLoggedIn()) {
+        account.innerHTML = `<button type="submit" onclick="logout()" class="account-button" id="account-button"> 
+        <img src="data/account.png" alt="account-button">
+      </button>`;
+    }else {
+        account.innerHTML = `<a href="../Home/login.html">Login</a> | 
+        <a href="../Home/signup.html">Sign Up</a>`;
+    }
+}
+
+function logout() {
+    localStorage.removeItem('user');
+    loadHeader();
 }
 
 function loadFooter() {
@@ -17,7 +39,7 @@ function loadFooter() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('DB/products.JSON')
+    fetch('../Home/DB/products.JSON')
         .then(response => response.json())
         .then(products => {
             const productGrid = document.querySelector(".product-grid");

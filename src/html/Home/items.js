@@ -15,7 +15,6 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
       const productList = document.getElementById('product-list');
       productList.innerHTML = '';
 
-      // Filter products based on input criteria
       const filteredProducts = products.filter(product => {
         return (categoryFilter === 'all' || product.category === categoryFilter) &&
           (!searchBar || product.name.toLowerCase().includes(searchBar.toLowerCase())) &&
@@ -23,19 +22,16 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
           (!toDate || new Date(product.date) <= new Date(toDate));
       });
 
-      // Sort products if necessary
       if (orderBy === 'Price: High-Low') {
         filteredProducts.sort((a, b) => b.price - a.price);
       } else if (orderBy === 'Price: Low-High') {
         filteredProducts.sort((a, b) => a.price - b.price);
       }
 
-      // Populate the product list
       filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
-        productItem.className = 'rental-item';
+        productItem.className = 'product-card';
 
-        // Add product details to the HTML
         productItem.innerHTML = `
           <img src="${product.image_url}" alt="${product.name}">
           <h2>${product.name}</h2>
@@ -65,11 +61,8 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
             description: productItem.dataset.description,
             category: productItem.dataset.category
           };
-
-          // Store product details in localStorage
           localStorage.setItem("productDetails", JSON.stringify(productDetails));
 
-          // Redirect to the product details page
           window.location.href = "../Item/Item.html";
         });
       });

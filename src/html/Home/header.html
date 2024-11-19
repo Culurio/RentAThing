@@ -37,6 +37,24 @@
     text-decoration: underline;
 }
 
+.account-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.account-button img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 </style>
 
 <header>
@@ -49,9 +67,8 @@
           <li><a href="#about">How It Works</a></li>
         </ul>
       </nav>
-      <div class="auth-links">
-        <a href="../Home/login.html">Login</a> | 
-        <a href="../Home/signup.html">Sign Up</a>
+      <div class="auth-links" id="auth-links">
+
       </div>
     </div>
   </header>
