@@ -15,9 +15,16 @@ function isLoggedIn() {
 function account() {
     const account = document.getElementById('auth-links');
     if (isLoggedIn()) {
-        account.innerHTML = `<button type="submit" onclick="logout()" class="account-button" id="account-button"> 
-        <img src="data/account.png" alt="account-button">
-      </button>`;
+        account.innerHTML = `<div class="dropdown">
+                                <button type="submit" class="dropbtn" id="account-button"> 
+                                    <img src="data/account.png" alt="account-button">
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="#">Account</a>
+                                    <a href="#">Your Adds</a>
+                                    <a href="#" onclick="logout()">Logout</a>
+                                </div>
+                            </div>`;
     }else {
         account.innerHTML = `<a href="../Home/login.html">Login</a> | 
         <a href="../Home/signup.html">Sign Up</a>`;
