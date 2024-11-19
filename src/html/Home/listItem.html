@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Item - RentStuff</title>
+    <link rel="stylesheet" href="ipmwebsite.css">
+    <script src="scripts/fetch.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+  <div id="header"></div>
+  <script>
+    loadHeader();
+  </script>
+
+  <div class="lItem_box">
+    <h1 id="ListItem_header">
+        List Item
+    </h1>
+    <form action="">
+        <div class="listItem_container">
+            <div class="listItem_control">
+                <label for="item_name">Item Name</label>
+                <input 
+                    id="item_name"
+                    name="item_name"
+                    placeholder="Enter item name"
+                    required>
+            </div>
+            <div class="listItem_control">
+                <label for="item_brand">Item Brand</label>
+                <input 
+                    id="item_brand"
+                    name="item_brand"
+                    placeholder="Enter item brand"
+                    required>
+            </div>
+            <div class="listItem_control">
+                <label for="item_category">Item category</label>
+                <select id="item_category" name="item_category" required>
+                    <option value="party_&_events">Party & Events</option>
+                    <option value="tools_&_equipment">Tools & Equipment</option>
+                    <option value="outdoor_&_camping">Outdoor & Camping</option>
+                    <option value="furniture_&_decor">Furniture & Decor</option>
+                    <option value="electronics">Electronics</option>
+                </select>
+            </div>
+            <div class="listItem_control">
+                <label for="item_condition">Item condition</label>
+                <select id="item_condition" name="item_condition" required>
+                    <option value="brand_new">Brand new</option>
+                    <option value="very_good">Very good</option>
+                    <option value="good">Good</option>
+                    <option value="satisfactory">Satisfactory</option>
+                    <option value="very_worn">Very worn</option>
+                </select>
+            </div>
+            <div class="listItem_control">
+                <label for="item_price">Item price per day</label>
+                <input 
+                    type="number"
+                    id="item_price"
+                    name="item_price"
+                    placeholder="Enter item price per day"
+                    required>
+            </div>
+            <div class="listItem_control">
+                <label for="item_photos">Upload item photos</label>
+                <input 
+                    type="file"
+                    id="item_photos"
+                    name="item_photos"
+                    required>
+            </div>
+        </div>
+            <div class="listItem_textarea_control">
+                <label for="item_description">Item description</label>
+                <textarea 
+                    id="item_description"
+                    name="item_description"
+                    row="15"
+                    cols="150"
+                    placeholder="Enter item description"
+                    required></textarea>
+            </div>
+            <br>
+
+            <div class="listItem-btn">
+                <button id="list_item-btn" type="submit">List item</button>
+            </div>
+
+
+        </div>
+    </form>
+    
+  </div>
+</body>
+</html>
