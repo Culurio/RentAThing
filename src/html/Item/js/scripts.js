@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const productGrid = document.querySelector(".product-grid");
     const template = document.getElementById("product-card-template").content;
+    const products = document.querySelectorAll(".product-card[data-name]");
   
-
     // Populate product cards dynamically
     products.forEach((product) => {
         const clone = template.cloneNode(true);

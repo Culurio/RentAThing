@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up - RentStuff</title>
   <link rel="stylesheet" href="ipmwebsite.css">
+  <script src="login_signup.js"></script>
 </head>
 <body>
   <div class="auth-container">
     <h2>Create an Account</h2>
-    <form>
+    <form action="ipmwebsite.html" method="GET">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -31,7 +32,9 @@
       <label for="citizen-number">Citizen Card Number:</label>
       <input type="text" id="citizen-number" name="citizen-number"  required>
 
-      <button type="submit" class="auth-btn">Sign Up</button>
+      <button type="submit" class="auth-btn" onclick=signUp()>
+        Sign Up
+      </button>
     </form>
     <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
