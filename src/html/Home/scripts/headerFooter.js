@@ -17,7 +17,7 @@ function account() {
     if (isLoggedIn()) {
         account.innerHTML = `<div class="dropdown">
                                 <button type="submit" class="dropbtn" id="account-button"> 
-                                    <img src="data/account.png" alt="account-button">
+                                    <img src="../Home/data/account.png" alt="account-button">
                                 </button>
                                 <div class="dropdown-content">
                                     <a href="../Home/profile.html">Profile</a>
