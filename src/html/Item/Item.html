@@ -57,9 +57,17 @@
         <h2>Select the date range you want to rent this item</h2>
         <form id="rentalForm">
             <label for="rentalDateRange">Choose a date range:</label>
-            <input type="text" id="rentalDateRange" name="rentalDateRange" required>
             <br><br>
-            <button type="submit">Confirm Date Range</button>
+            <!-- Use an actual date input or date picker UI -->
+            <img 
+            id="rentalDateRange" 
+            name="rentalDateRange"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7D6LPcFyZF7TfKz-k7CNtVTbcPXwUZPd1Ng&s" 
+            alt="Calendar Icon" 
+            style="cursor: pointer; width: 200px; height: 200px;" 
+            id="calendarIcon">
+            <br><br>
+            <button class="confirmBtn" type="submit">Confirm Date Range</button>
         </form>
     </div>
 </div>

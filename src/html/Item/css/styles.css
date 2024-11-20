@@ -44,6 +44,30 @@ section.py-5 {
   margin-bottom: 20px;
 }
 
+.myBtn {
+  background-color: #4b3621;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.confirmBtn{
+  background-color: #4b3621;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
 .btn-outline-dark {
   border: 1px solid #333;
   color: #333;
