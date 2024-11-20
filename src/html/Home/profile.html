@@ -6,8 +6,8 @@
   <title>Login - RentStuff</title>
   <link rel="stylesheet" href="profile.css">
   <script src="profile.js"></script>
-  <script src="scripts/fetch.js"></script>
-  <script src="scripts/headerFooter.js"></script>
+  <script src="../Home/scripts/fetch.js"></script>
+  <script src="../Home/scripts/headerFooter.js"></script>
 </head>
 <body>
   <div id="header"></div>
@@ -17,7 +17,7 @@
   <div class="profile" id="profile">
     <div class="profile-info">
         <div class="profile-image">
-          <img src="data/profile.png" alt="profile-image">
+          <img src="../Home/data/profile.png" alt="profile-image">
         </div>
         <div class="profile-text" id="profile-text">
           <script>addInfo()</script>
@@ -27,7 +27,7 @@
     <div class="profile-rents">
       <h1>Your adds</h1>
       <button class="add">
-        <img src="data/add-symbol.png" alt="add" onclick="addRent()">
+        <img src="../Home/data/add-symbol.png" alt="add" onclick="addRent()">
       </button>
       <div class="rents-list" id="rents-list"></div>
     </div>
