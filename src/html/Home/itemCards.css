@@ -1,12 +1,13 @@
   .product-card {
-    border: 1px solid #ddd;
+    border: 1px solid #d9c7b6;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(75, 54, 33, 0.1);
     padding: 25px;
     margin: 20px;
     max-width: 350px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
   }
 
   .product-card img {
@@ -19,16 +20,16 @@
   .product-card h4 {
     margin-top: 20px;
     font-size: 1.8em;
-    color: #333;
+    color: #4b3621;
   }
 
   .product-card p {
     font-size: 1.4em;
-    color: #555;
+    color: #6f4e37;
   }
 
   .product-card .rent-now-btn {
-    background-color: #007BFF;
+    background-color: #4b3621;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -40,10 +41,10 @@
   }
 
   .product-card .rent-now-btn:hover {
-    background-color: #0056b3;
+    background-color: #6f4e37;
   }
 
   .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(75, 54, 33, 0.2);
   }

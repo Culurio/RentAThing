@@ -4,8 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #d9c7b6;
+    color: #4b3621;
 }
 
 .navbar ul {
@@ -18,30 +18,47 @@
 }
 
 .navbar ul li a {
-    color: #fff;
+    color: #4b3621;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .auth-links {
-    margin-left: auto;
+  color: #6f4e37;
+  border-bottom: 2px solid #4b3621;
 }
 
 .auth-links a {
-    color: #fff;
+  color: #4b3621;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .auth-links a:hover {
-    text-decoration: underline;
+  color: #6f4e37; 
+  text-decoration: underline;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; 
+    margin-right: 15px;
+    transition: transform 0.3s ease;
 }
 
 </style>
 
 <header>
     <div class="navbar">
-      <h1 class="logo">RentStuff</h1>
+      <div class="logo-container">
+        <img src="images/logo.png" alt="RentStuff Logo" class="logo">
+    </div>
       <nav>
         <ul>
           <li><a href="../Home/ipmwebsite.html">Home</a></li>
