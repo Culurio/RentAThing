@@ -6,6 +6,7 @@
     <title>My current rents - RentStuff</title>
     <link rel="stylesheet" href="currentRents.css">
     <script src="scripts/fetch.js"></script>
+    <script src="scripts/currentRents.js"></script>
 </head>
 <body>
 
@@ -22,82 +23,17 @@
 
     <div class="table_control">
         <table class="returns_table" border="2px">
-            <div class="returns_row_header">
+            <thead>
                 <tr>
                     <th>Item/Service</th>
                     <th>Due delivery</th>
-                    <th>&nbsp</th>
+                    <th>&nbsp;</th>
                 </tr>
-            </div>
-            <div class="returns_row">
-                <tr>
-                    <div class="is_elem">
-                        <td>Honda City</td>
-                    </div>
-                    <div class="is_elem"></div>
-                        <td>30/11/2024</td>
-                    </div>
-                    <div class="is_elem"></div>
-                        <td><a href="../Home/returnItem.html"><button class="returnItem-btn">Return item</button></td></a>
-                    </div>
-                </tr>
-            </div>
-            <div class="returns_row"></div>
-            <tr>
-                <div class="is_elem">
-                    <td>Clown</td>
-                </div>
-                <div class="is_elem"></div>
-                    <td>-</td>
-                </div>
-                <div class="is_elem"></div>
-                    <td>-</td>
-                </div>
-            </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-            <div class="returns_row_empty"></div>
-                <tr>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                </tr>
-            </div>
-        </table>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here dynamically -->
+            </tbody>
+        </table>        
     </div>
   </div>
   <div id="footer"></div>
