@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return item - RentStuff</title>
+    <link rel="stylesheet" href="ipmwebsite.css">
+    <script src="scripts/fetch.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+  <div id="header"></div>
+  <script>
+    loadHeader();
+  </script>
+
+  <div class="return_item_box">
+
+    <h1>Return Item</h1>
+    <br>
+    <br>
+
+    <div class="return_item_container">
+    <div class="upload_photos">
+        <label id="upload_photos_label" for="item_return_photos">Upload item photos</label>
+        <input 
+            type="file"
+            id="item_return_photos"
+            name="item_return_photos"
+            required>
+    </div>
+    <br>
+    <br>
+    <div class="choose_shipment">
+        <label id="choose_shipment_label" for="choose_shipment">Upload item photos</label>
+        <select
+            id="choose_shipment"
+            name="choose_shipment"
+            required>
+                <option value="drop_point">Drop point</option>
+                <option value="locker">Locker</option>
+        </select>
+    </div>
+
+    <button id="returnItem-btn" type="submit">Return item</button>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+    <script>
+    loadFooter();
+    </script>
+
+</body>
+</html>
