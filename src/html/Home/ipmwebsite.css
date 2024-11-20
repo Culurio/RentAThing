@@ -252,3 +252,8 @@
   font-weight: bold;
   color: #111;
 }
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}

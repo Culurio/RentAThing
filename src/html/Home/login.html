@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - RentStuff</title>
   <link rel="stylesheet" href="ipmwebsite.css">
+  <script src="login_signup.js" defer></script>
+  <script src="scripts/fetch.js"></script>
+  <script src="header.js"></script>
 </head>
 <body>
-  <div class="auth-container">
+  <div id="header"></div>
+  <script>
+    loadHeader();
+  </script>
+  <div class="auth-container" id="auth-container">
     <h2>Login to RentStuff</h2>
-    <form>
+    <form id="login-form">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
@@ -20,5 +27,9 @@
     </form>
     <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
   </div>
+  <div id="footer"></div>
+  <script>
+  loadFooter();
+  </script>
 </body>
 </html>

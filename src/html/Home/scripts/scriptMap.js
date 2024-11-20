@@ -43,7 +43,7 @@ function initMap() {
   // Botão de confirmação
   document.getElementById('confirm-btn').addEventListener('click', () => {
     const selectedLocation = marker.getPosition();
-    alert(`Location confirmed: ${selectedLocation.lat()}, ${selectedLocation.lng()}`);
+    window.location.href = "../Home/ipmwebsite.html"
   });
 }
 
