@@ -37,10 +37,9 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
           <h2>${product.name}</h2>
           <p>${product.description}</p>
           <p>Price: $${product.price}</p>
-          <button class="view-item-button">View Item</button>
+          <button class="rent-now-btn">Rent Now</button>
         `;
 
-        // Add dataset attributes for easy access
         productItem.dataset.id = product.id;
         productItem.dataset.name = product.name;
         productItem.dataset.price = product.price;
@@ -48,11 +47,9 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
         productItem.dataset.description = product.description;
         productItem.dataset.category = product.category;
 
-        // Append the item to the product list
         productList.appendChild(productItem);
 
-        // Add click event listener
-        productItem.querySelector('.view-item-button').addEventListener('click', () => {
+        productItem.addEventListener('click', () => {
           const productDetails = {
             id: productItem.dataset.id,
             name: productItem.dataset.name,
