@@ -19,7 +19,19 @@ function signUp() {
 
     localStorage.setItem('user', user);
 
-    addAccount(user);
+    //addAccount(user);
+}
+
+function login(){
+  if(localStorage.getItem('user') !== null){
+    window.location.href = '../Home/map.html';
+  }else{
+    const LOGIN = document.getElementById('auth-container');
+    const errorMessage = document.createElement('p');
+    errorMessage.className = 'error-message';
+    errorMessage.textContent = 'The account does not exist.';
+    LOGIN.appendChild(errorMessage);
+  }
 }
 
 function addAccount(newAccount) {
@@ -55,3 +67,7 @@ function addAccount(newAccount) {
         }
       
 }
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  login();
+});
