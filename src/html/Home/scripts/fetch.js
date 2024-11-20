@@ -1,6 +1,5 @@
 import { ItemManager } from '../DB/Items.js';
 
-
 document.addEventListener("DOMContentLoaded", () => {
     fetch('../Home/DB/products.JSON')
         .then(response => response.json())
