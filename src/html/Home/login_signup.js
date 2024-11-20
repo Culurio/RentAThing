@@ -17,7 +17,7 @@ function signUp() {
         citizenNumber: citizenNumber
     };
 
-    localStorage.setItem('user', user);
+    localStorage.setItem('user', JSON.stringify(user));
 
     //addAccount(user);
 }
