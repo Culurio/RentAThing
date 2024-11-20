@@ -16,7 +16,6 @@ export class ItemManager {
 
     loadItems(dataArray) {
         dataArray.forEach((item) => {
-            console.log("Testee")
             const newItem = new Item(
                 item.id,
                 item.name,
