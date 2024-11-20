@@ -1,91 +1,106 @@
+
 .Rents_box{
-    max-width: 1400px;
-    padding: 30px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 20px;
-    box-shadow: black;
-    border-radius: 10px;
-  }
-  #myCurrentRents_header{
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .table_control{
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-  }
-  tr{
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    height: 50px;
-    
-  }
-  td{
-    padding: 10px;
-  }
-  .returns_table{
-    width: 1335px;
-    border-collapse: collapse;
-  }
-  
-  .returnItem-btn{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(92, 98, 126);
-    padding: 5px 10px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    transition: 0.2s ease-in;
-  }
-  .returnItem-btn:hover{
-    background-color: rgba(92, 98, 126, 0.5);
-    border: 2px solid grey;
-    color: white;
-    transition: 0.2s ease-out;
-    cursor: pointer;
-  }
-  .return_item_box{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin: 50px;
-    max-width: 1450px;
-    height: 500px;
-    padding: 30px;
-    background-color: white;
-    box-shadow: black;
-    border-radius: 10px;
-  }
-  .return_item_container{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  #upload_photos_label{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-  }
-  #choose_shipment_label{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-  }
-  #returnItem-btn{
-    margin-top: 150px;
-    width: 295px;
-    background-color: rgb(92, 98, 126);
-    border: transparent;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    transition: 0.2s ease-in;
-  }
-  #returnItem-btn:hover{
-    background-color: rgba(92, 98, 126, 0.5);
-    color: white;
-    transition: 0.2s ease-out;
-    cursor: pointer;
-  }
+  max-width: 1400px;
+  padding: 30px;
+  background-color: #ffffff;
+  margin: 20px auto;
+  border: 1px solid #d9c7b6; 
+  border-radius: 10px;
+}
+
+#myCurrentRents_header{
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b3621;
+}
+
+.table_control{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+tr{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
+  color: #4b3621;
+}
+
+td{
+  padding: 10px;
+  border: 1px solid #d9c7b6;
+}
+
+.returns_table{
+  width: 1335px;
+  border-collapse: collapse;
+  border: 1px solid #d9c7b6;
+}
+
+.returnItem-btn{
+  width: 100%;
+  height: 100%;
+  background-color: #4b3621;
+  padding: 5px 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  transition: 0.2s ease-in;
+}
+
+.returnItem-btn:hover{
+  background-color: #6f4e37;
+  border: 2px solid grey;
+  color: white;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+.return_item_box{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 50px;
+  max-width: 1450px;
+  height: 500px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: black;
+  border-radius: 10px;
+}
+
+.return_item_container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#upload_photos_label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#choose_shipment_label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#returnItem-btn{
+  margin-top: 150px;
+  width: 295px;
+  background-color: rgb(92, 98, 126);
+  border: transparent;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  transition: 0.2s ease-in;
+}
+
+#returnItem-btn:hover{
+  background-color: rgba(92, 98, 126, 0.5);
+  color: white;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}

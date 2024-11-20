@@ -1,175 +1,193 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f2eb;
+  color: #4b3621;
+  font-family: "Arial", sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #d9c7b6;
+  text-align: center;
+  padding: 100px 20px;
+  color: #4b3621;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+}
+
+.search-bar {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #4b3621;
+  border-radius: 5px;
+}
+
+.From {
+  padding: 10px;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 200px;
+}
+
+.To {
+  padding: 10px;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 200px;
+}
+
+/* Categories */
+.categories {
+  text-align: center;
+  background-color: #f5f2eb;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  background: #d9c7b6;
+  padding: 15px;
+  border-radius: 8px;
+  color: #4b3621;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.category-item:hover {
+  background: #b89c80;
+}
+
+/* Products */
+.products {
+  padding: 40px 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #d9c7b6; 
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background: #ffffff; 
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.rent-now-btn {
+  padding: 8px 15px;
+  background-color: #4b3621;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
   }
-  
-  /* Hero Section */
-  .hero {
-    background: url('https://via.placeholder.com/1920x500') center/cover no-repeat;
-    text-align: center;
-    padding: 100px 20px;
-    color: #fff;
-  }
-  
-  .hero h2 {
-    font-size: 2.5em;
-  }
-  
-  .search-bar {
-    padding: 10px;
-    margin-top: 20px;
-    width: 80%;
-    max-width: 400px;
+  .rent-now-btn:hover {
+    background-color: #6f4e37; 
   }
 
-  .From {
-    padding: 10px;
-    margin-top: 20px;
-    width: 80%;
-    max-width: 200px;
-  }
+/* Footer */
+footer {
+  background: #4b3621; 
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #d9c7b6;
+  border-radius: 8px;
+  background-color: #f5f2eb;
+  text-align: center;
+}
 
-  .To {
-    padding: 10px;
-    margin-top: 20px;
-    width: 80%;
-    max-width: 200px;
-  }
-  
-  /* Categories */
-  .categories {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .category-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .category-item {
-    background: #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  /* Products */
-  .products {
-    padding: 40px 20px;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .product-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-  }
-  
-  .product-card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  .rent-now-btn {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Footer */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-  }
-  .auth-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .auth-container h2 {
-    margin-bottom: 20px;
-  }
-  
-  .auth-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .auth-container label {
-    margin: 10px 0 5px;
-  }
-  
-  .auth-container input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .auth-btn {
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .auth-btn:hover {
-    background-color: #555;
-  }
-  
-  .categories {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .category-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .category-item {
-    background: #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+.auth-container h2 {
+  margin-bottom: 20px;
+}
 
-  .filter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 20px;
-  }
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
 
-  .filter .filter-bar, .filter .orderBy {
-    display: flex;
-    align-items: center;
+.auth-container label {
+  margin: 10px 0 5px;
+  background-color: #f5f2eb;
+}
+
+.auth-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d9c7b6;
+  border-radius: 5px;
+}
+
+.auth-btn {
+  padding: 10px;
+  background-color: #4b3621;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background-color: #6f4e37;
+}
+
+.categories {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  background: #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 20px;
+}
+
+.filter .filter-bar,
+.filter .orderBy {
+  display: flex;
+  align-items: center;
 }
 
 .search-button {
@@ -257,3 +275,32 @@
   color: red;
   margin: 10px 0;
 }
+
+input, select, textarea{
+  padding: 6px 10px;
+  border: 1px solid #d9c7b6;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b3621;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline-color: #4b3621;
+}
+
+.lItem_box{
+  max-width: 1300px;
+  padding: 30px;
+  background-color: #ffffff;
+  margin: 20px auto;
+  border: 1px solid #d9c7b6;
+  border-radius: 10px;
+}
+
+  #ListItem_header{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    color: #4b3621;
+  }
