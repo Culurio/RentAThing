@@ -20,9 +20,9 @@ function account() {
                                     <img src="data/account.png" alt="account-button">
                                 </button>
                                 <div class="dropdown-content">
-                                    <a href="#">Account</a>
-                                    <a href="#">Your Adds</a>
-                                    <a href="#" onclick="logout()">Logout</a>
+                                    <a href="../Home/profile.html">Profile</a>
+                                    <a href="#">Settings</a>
+                                    <a class="logout-button" href="#" onclick="logout()">Logout</a>
                                 </div>
                             </div>`;
     }else {
