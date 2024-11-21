@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - RentStuff</title>
   <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="itemCards.css">
+  <link rel="stylesheet" href="ipmwebsite.css">
   <script src="profile.js"></script>
   <script src="../Home/scripts/fetch.js"></script>
   <script src="../Home/scripts/headerFooter.js"></script>
@@ -26,11 +28,21 @@
     </div>
     <div class="profile-rents">
       <h1>Your adds</h1>
-      <button class="add">
-        <img src="../Home/data/add-symbol.png" alt="add" onclick="addAdds()">
-      </button>
-      <div class="rents-list" id="rents-list"></div>
     </div>
+      <section id="products" class="products">
+        <div class="items-grid">
+          <!-- Product Card Template -->
+          <template id="items-card-template">
+            <div class="product-card">
+              <img src="" alt="Product Image">
+              <h4 class="product-name"></h4>
+              <p class="product-price"></p>
+              <button class="rent-now-btn">Rent Now</button>
+            </div>
+          </template>
+          <!-- Product Cards -->
+        </div>
+      </section>
   </div>
   <div id="footer"></div>
   <script>

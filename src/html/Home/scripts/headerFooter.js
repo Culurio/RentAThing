@@ -4,6 +4,7 @@ function loadHeader() {
         .then(data => {
             document.getElementById('header').innerHTML = data;
             account();
+            rent();
         })
         .catch(error => console.error('Error loading header:', error));
 }
@@ -32,7 +33,7 @@ function account() {
 }
 
 function logout() {
-    localStorage.removeItem('user');
+    localStorage.clear();
     loadHeader();
 }
 
@@ -43,4 +44,18 @@ function loadFooter() {
             document.getElementById('footer').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
+}
+
+function rent() {
+    const rents = document.getElementById('rents');
+    if (isLoggedIn()) {
+        const myCurrentRents = document.createElement('li');
+        const listItem = document.createElement('li');
+        
+        myCurrentRents.innerHTML = '<a href="../Home/myCurrentRents.html"> My Current Rents</a>';
+        listItem.innerHTML = '<a href="../Home/listItem.html"> List Item +</a>';
+        
+        rents.appendChild(myCurrentRents);
+        rents.appendChild(listItem);
+    }
 }
