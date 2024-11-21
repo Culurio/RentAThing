@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Item - RentStuff</title>
     <link rel="stylesheet" href="ipmwebsite.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pica/6.1.1/pica.min.js"></script>
     <script src="../Home/scripts/fetch.js"></script>
     <script src="../Home/scripts/headerFooter.js"></script>
     <script src="listItem.js"></script>
@@ -20,7 +21,7 @@
     <h1 id="ListItem_header">
         List Item
     </h1>
-    <form action="">
+    <form action="" id="listItemForm">
         <div class="listItem_container">
             <div class="listItem_control">
                 <label for="item_name">Item Name</label>
@@ -89,7 +90,7 @@
             <br>
 
             <div class="listItem-btn">
-                <button id="list_item-btn" type="submit" onclick="addItem()">List item</button>
+                <button id="list_item-btn" type="submit">List item</button>
             </div>
 
 
