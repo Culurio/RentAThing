@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My current rents - RentStuff</title>
+    <link rel="stylesheet" href="currentRents.css">
+    <script src="scripts/fetch.js"></script>
+    <script src="scripts/headerFooter.js"></script>
+    <script src="scripts/currentRents.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+  <div id="header"></div>
+  <script>
+    loadHeader();
+  </script>
+
+  <div class="Rents_box">
+    <h1 id="myCurrentRents_header">My Current Rents</h1>
+
+    <input type="text" placeholder="Search for items..." class="search-bar">
+
+    <div class="table_control">
+        <table class="returns_table" border="2px">
+            <thead>
+                <tr>
+                    <th>Item/Service</th>
+                    <th>Due delivery</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here dynamically -->
+            </tbody>
+        </table>        
+    </div>
+  </div>
+  <div id="footer"></div>
+    <script>
+    loadFooter();
+    </script>
+
+</body>
+</html>
+

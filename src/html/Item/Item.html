@@ -10,9 +10,19 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="../Home/scripts/fetch.js"></script>
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../Home/itemCards.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="../Home/scripts/headerFooter.js"></script>
+    <script type='module' src="../Home/scripts/fetch.js"></script>
+>>>>>>> d328bbdb1d9ea1cf3226d15ad31237ab0521875c
 
 </head>
 
@@ -37,17 +47,38 @@
                         <span>Product Price</span>
                     </div>
                     <p class="lead">Product description placeholder.</p>
-                    <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
-                            style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
+                    <div>
+                        <button class='myBtn' type="button">
+                            Rent Now
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Select the date range you want to rent this item</h2>
+        <form id="rentalForm">
+            <label for="rentalDateRange">Choose a date range:</label>
+            <br><br>
+            <!-- Use an actual date input or date picker UI -->
+            <img 
+            id="rentalDateRange" 
+            name="rentalDateRange"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7D6LPcFyZF7TfKz-k7CNtVTbcPXwUZPd1Ng&s" 
+            alt="Calendar Icon" 
+            style="cursor: pointer; width: 200px; height: 200px;" 
+            id="calendarIcon">
+            <br><br>
+            <button class="confirmBtn" type="submit">Confirm Date Range</button>
+        </form>
+    </div>
+</div>
+
+
     </section>
     <section id="products" class="products">
         <h3>Featured Products</h3>

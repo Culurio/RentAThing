@@ -6,69 +6,130 @@
     padding: 20px;
     background-color: #d9c7b6;
     color: #4b3621;
-}
+  }
 
-.navbar ul {
+  .navbar ul {
     list-style: none;
     display: flex;
-}
+  }
 
-.navbar ul li {
+  .navbar ul li {
     margin: 0 15px;
-}
+  }
 
-.navbar ul li a {
+  .navbar ul li a {
     color: #4b3621;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-}
+  }
 
-.auth-links {
-  color: #6f4e37;
-  border-bottom: 2px solid #4b3621;
-}
+  .auth-links {
+    color: #6f4e37;
+    border-bottom: 2px solid #4b3621;
+  }
 
-.auth-links a {
-  color: #4b3621;
+  .auth-links a {
+    color: #4b3621;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-}
+  }
 
-.auth-links a:hover {
-  color: #6f4e37; 
-  text-decoration: underline;
-}
-.logo-container {
+  .auth-links a:hover {
+    color: #6f4e37;
+    text-decoration: underline;
+  }
+
+  .logo-container {
     display: flex;
     align-items: center;
-}
+  }
 
-.logo {
-    height: 50px; 
+  .logo {
+    height: 50px;
     margin-right: 15px;
     transition: transform 0.3s ease;
-}
+  }
 
+  /* Dropdown Button */
+  .dropbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .dropbtn img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 16px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content .logout-button {
+    color: red;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #4b3621;
+  }
 </style>
 
 <header>
-    <div class="navbar">
-      <div class="logo-container">
-        <img src="images/logo.png" alt="RentStuff Logo" class="logo">
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="../Home/data/logo.png" alt="RentStuff Logo" class="logo" />
     </div>
-      <nav>
-        <ul>
-          <li><a href="../Home/ipmwebsite.html">Home</a></li>
-          <li><a href="#about">How It Works</a></li>
-          <li><a href="../Home/listItem.html"> List Item +</a></li>
-        </ul>
-      </nav>
-      <div class="auth-links">
-        <a href="../Home/login.html">Login</a> | 
-        <a href="../Home/signup.html">Sign Up</a>
-      </div>
-    </div>
-  </header>
+    <nav>
+      <ul>
+        <li><a href="../Home/ipmwebsite.html">Home</a></li>
+        <li><a href="../Home/myCurrentRents.html"> My Current Rents</a></li>
+        <li><a href="../Home/listItem.html"> List Item +</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links" id="auth-links"></div>
+  </div>
+</header>
