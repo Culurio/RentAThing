@@ -39,7 +39,7 @@
   .edit-profile {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #4b3621;
     color: white;
     border: none;
     border-radius: 5px;
@@ -47,7 +47,7 @@
   }
   
   .edit-profile:hover {
-    background-color: #0056b3;
+    background-color: #4b3621;
   }
   
   /* Profile rents container */
