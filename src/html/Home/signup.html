@@ -8,6 +8,7 @@
   <script src="login_signup.js"></script>
   <script src="scripts/fetch.js"></script>
   <script src="scripts/headerFooter.js"></script>
+  <script src="scripts/signup.js"></script>
 </head>
 <body>
   <div id="header"></div>
@@ -32,13 +33,20 @@
       <label for="birthdate">Birth Date:</label>
       <input type="date" id="birthdate" name="birthdate" required>
 
-      <label for="phone-number">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+      <label for="phone">Phone Number:</label>
+      <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter phone number"
+              required
+              pattern="[0-9]{10,15}"
+              title="Please enter a valid phone number with 10 to 15 digits">
 
       <label for="citizen-number">Citizen Card Number:</label>
       <input type="text" id="citizen-number" name="citizen-number" placeholder="Enter citizen number"  required>
 
-      <button type="submit" class="auth-btn" onclick=signUp()>
+      <button type="submit" class="auth-btn" onclick="signUp(event)">
         Sign Up
       </button>
     </form>
