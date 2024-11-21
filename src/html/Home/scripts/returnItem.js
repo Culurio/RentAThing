@@ -1,15 +1,14 @@
 function returnItem(){
     const rentalItems = JSON.parse(localStorage.getItem("rentalItems")) || [];
-    const itemIndex = parseInt(localStorage.getItem('item_to_remove'), 10);
+    const item = JSON.parse(localStorage.getItem("item_to_remove"));
 
-    console.log(rentalItems);
-    const updatedItems = rentalItems.splice(1,1);
-
-    console.log(itemIndex);
-    console.log(updatedItems);
+    const updatedItems = rentalItems.filter(
+        (rental) => rental.productName !== item.productName || rental.rentalDateRange !== item.rentalDateRange
+    );
     
-
     localStorage.setItem("rentalItems", JSON.stringify(updatedItems));
+    alert(`${item.productName} has been marked as returned.`);
 
-    /* window.location.href = "myCurrentRents.html"; */
+
+    window.location.href = "myCurrentRents.html";
 }

@@ -18,10 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Due delivery column
         const dateCell = document.createElement("td");
-        // Extract only the end date from the range
+        // Extract only the end date from the range, or use start date if no end date exists
         const dateRange = item.rentalDateRange; // Assuming the date range is stored as "YYYY-MM-DD to YYYY-MM-DD"
-        const returnDate = dateRange.split(" to ")[1]; // Get the second part (end date)
-        dateCell.textContent = returnDate;
+        let displayDate = "";
+        if (dateRange.includes(" to ")) {
+            displayDate = dateRange.split(" to ")[1] || dateRange.split(" to ")[0]; // Get end date, fallback to start date
+        } else {
+            displayDate = dateRange; // No " to ", assume it's just the start date
+        }
+        dateCell.textContent = displayDate;
         row.appendChild(dateCell);
 
         // Return item button column
@@ -30,17 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         returnButton.textContent = "Return item";
         returnButton.classList.add("returnItem-btn");
         returnButton.addEventListener("click", () => {
-            // Remove the item from localStorage
-            /* const updatedItems = rentalItems.filter(
-                (rental) => rental.productName !== item.productName || rental.rentalDateRange !== item.rentalDateRange
-            );
-            localStorage.setItem("rentalItems", JSON.stringify(updatedItems));
-
-            // Remove the row from the table
-            row.remove();
-
-            alert(`${item.productName} has been marked as returned.`); */
-            localStorage.setItem('item_to_remove', index);
+            localStorage.setItem('item_to_remove', JSON.stringify(item));
             window.location.href = "returnItem.html";
         });
 
