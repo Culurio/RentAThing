@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Find the table's body to append rows
     const tableBody = table.querySelector("tbody") || document.createElement("tbody");
 
+    let index = 0;
     rentalItems.forEach((item) => {
         const row = document.createElement("tr");
 
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         returnButton.classList.add("returnItem-btn");
         returnButton.addEventListener("click", () => {
             // Remove the item from localStorage
-            const updatedItems = rentalItems.filter(
+            /* const updatedItems = rentalItems.filter(
                 (rental) => rental.productName !== item.productName || rental.rentalDateRange !== item.rentalDateRange
             );
             localStorage.setItem("rentalItems", JSON.stringify(updatedItems));
@@ -38,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // Remove the row from the table
             row.remove();
 
-            alert(`${item.productName} has been marked as returned.`);
+            alert(`${item.productName} has been marked as returned.`); */
+            localStorage.setItem('item_to_remove', index);
+            window.location.href = "returnItem.html";
         });
 
         actionCell.appendChild(returnButton);
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Append the row to the table body
         tableBody.appendChild(row);
+        index++;
     });
 
     // Append the table body to the table (in case it wasn't already present)

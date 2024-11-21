@@ -144,11 +144,97 @@ body {
   color: #fff;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  transition: 0.3s ease-in;
 }
 
 .auth-btn:hover {
   background-color: #6f4e37;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+label {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input, select, textarea{
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input:focus{
+  outline-color: rgb(38,0,255);
+}
+select:focus{
+  outline-color: rgb(38,0,255);
+}
+textarea:focus{
+  outline-color: rgb(38,0,255);
+}
+.loginSignupRedirectText{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lItem_box{
+  max-width: 1300px;
+  padding: 30px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: black;
+  border-radius: 10px;
+}
+#ListItem_header{
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+}
+.listItem_container{
+  margin-top: 20px;
+  display: block;
+  gap: 20px;
+}
+.listItem_control{
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+.listItem-btn{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+#list_item-btn{
+  background-color: rgb(92, 98, 126);
+  border: transparent;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  transition: 0.2s ease-in;
+}
+#list-item-btn:hover{
+  background-color: white;
+  border: 2px solid rgb(92, 98, 126);
+  color: grey;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+.listItem_textarea_control{
+  font-weight: bolder;
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+}
+#item_description{
+  height: 150px;
+  width: 1250px;
 }
 
 .categories {

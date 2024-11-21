@@ -7,3 +7,7 @@ function addInfo(){
                     <p id="phone">${user.phoneNumber}</p>
                     <p id="address">${user.birthDate}</p>`
 }
+
+function addAdds(){
+    window.location.href = "../Home/listItem.html";
+}
