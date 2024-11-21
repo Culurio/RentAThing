@@ -11,34 +11,6 @@
   padding: 15px;
 }
 
-<<<<<<< HEAD
-/* Navbar Placeholder Styling */
-#header {
-  background: #343a40;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-#footer {
-  background: #343a40;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-=======
->>>>>>> d328bbdb1d9ea1cf3226d15ad31237ab0521875c
 /* Product Section */
 section.py-5 {
   padding: 50px 0;
@@ -107,74 +79,6 @@ section.py-5 {
   color: white;
 }
 
-<<<<<<< HEAD
-/* Featured Products Section */
-#products {
-  padding: 50px 0;
-  background-color: #f1f1f1;
-}
-
-#products h3 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  color: #343a40;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.product-card {
-  background: white;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.product-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.product-card h4 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.product-card p {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-.rent-now-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.rent-now-btn:hover {
-  background-color: #0056b3;
-=======
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -211,5 +115,4 @@ section.py-5 {
   color: #000;
   text-decoration: none;
   cursor: pointer;
->>>>>>> d328bbdb1d9ea1cf3226d15ad31237ab0521875c
 }
