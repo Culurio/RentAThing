@@ -30,6 +30,7 @@ tr{
 td{
   padding: 10px;
   border: 1px solid #d9c7b6;
+  color: #4b3621;
 }
 
 .returns_table{
@@ -51,8 +52,8 @@ td{
 
 .returnItem-btn:hover{
   background-color: #6f4e37;
-  border: 2px solid grey;
-  color: white;
+  border: 2px solid #d9c7b6;
+  color: #fff;
   transition: 0.2s ease-out;
   cursor: pointer;
 }
@@ -64,8 +65,9 @@ td{
   max-width: 1450px;
   height: 500px;
   padding: 30px;
-  background-color: white;
-  box-shadow: black;
+  background-color: #ffffff;
+  border: 1px solid #d9c7b6;
+  box-shadow: 0 4px 8px rgba(75, 54, 33, 0.1);;
   border-radius: 10px;
 }
 
@@ -78,17 +80,19 @@ td{
 #upload_photos_label{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  color: #4b3621;
 }
 
 #choose_shipment_label{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  color: #4b3621;
 }
 
 #returnItem-btn{
   margin-top: 150px;
   width: 295px;
-  background-color: rgb(92, 98, 126);
+  background-color: #4b3621;
   border: transparent;
   padding: 5px 10px;
   color: white;
@@ -99,7 +103,7 @@ td{
 }
 
 #returnItem-btn:hover{
-  background-color: rgba(92, 98, 126, 0.5);
+  background-color: #6f4e37;
   color: white;
   transition: 0.2s ease-out;
   cursor: pointer;

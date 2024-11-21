@@ -1,56 +1,60 @@
-/* Profile container */
 .profile {
     display: flex;
     flex-direction: column;
     align-items: left;
+    background-color: #f9f6f1;
     padding: 20px;
+    border-radius: 10px;
   }
-  
-  /* Profile info container */
+ 
   .profile-info {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1500px;
     margin-bottom: 20px;
+    border-bottom: 1px solid #d9c7b6; 
+  padding-bottom: 10px;
   }
   
-  /* Profile image container */
+ 
   .profile-image {
     flex-shrink: 0;
     margin-right: 20px;
   }
   
-  /* Profile image styling */
+
   .profile-image img {
     background: none;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #d9c7b6;
   }
   
-  /* Profile text container */
+ 
   .profile-text {
     flex-grow: 1;
+    color: #4b3621;
   }
   
-  /* Edit profile button */
   .edit-profile {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color:  #4b3621;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
   }
   
   .edit-profile:hover {
-    background-color: #0056b3;
+    background-color:  #6f4e37;
   }
   
-  /* Profile rents container */
   .profile-rents {
     display: flex;
     justify-content: space-between;
@@ -74,4 +78,5 @@
   
   .rents-list {
     margin-top: 20px;
+    color: #4b3621;
   }
