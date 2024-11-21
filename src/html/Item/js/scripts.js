@@ -41,21 +41,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 
-    // Function to extract disabled dates from rental items
-    function getDisabledDates(rentals) {
-        const disabledDates = [];
-        rentals.forEach((rental) => {
-            const [startDate, endDate] = rental.rentalDateRange.split(" to ");
-            const current = new Date(startDate);
-            const end = new Date(endDate);
+// Function to extract disabled dates from rental items
+function getDisabledDates(rentals) {
+    const disabledDates = [];
+    rentals.forEach((rental) => {
+        const dateRange = rental.rentalDateRange;
+        let startDate, endDate;
 
-            while (current <= end) {
-                disabledDates.push(new Date(current).toISOString().split("T")[0]); // Format date
-                current.setDate(current.getDate() + 1); // Increment by one day
-            }
-        });
-        return disabledDates;
-    }
+        if (dateRange.includes(" to ")) {
+            [startDate, endDate] = dateRange.split(" to "); // Split into start and end dates
+        } else {
+            startDate = endDate = dateRange; // Single day case
+        }
+
+        const current = new Date(startDate);
+        const end = new Date(endDate);
+
+        while (current <= end) {
+            disabledDates.push(new Date(current).toISOString().split("T")[0]); // Format date
+            current.setDate(current.getDate() + 1); // Increment by one day
+        }
+    });
+    return disabledDates;
+}
+
 
     // Close the modal
     closeModal.addEventListener("click", () => {
