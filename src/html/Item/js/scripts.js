@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (productDetails) {
         document.querySelector(".card-img-top").src = productDetails.img;
         document.querySelector(".display-5").textContent = productDetails.name;
-        document.querySelector(".fs-5 span:last-child").textContent = productDetails.price;
+        document.querySelector(".fs-5 span:first-child").textContent = "$"+productDetails.price+".00/day";
         document.querySelector(".lead").textContent = `${productDetails.name} is available for rental at ${productDetails.price}.`;
+        document.querySelector(".modal-image").src = productDetails.img;
+        document.querySelector(".modal-price").textContent = "$"+productDetails.price+".00/day";
     }
 
     // Modal and form logic
