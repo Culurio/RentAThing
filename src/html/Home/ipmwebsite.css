@@ -383,9 +383,3 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 30px;
     color: #4b3621;
   }
-  
-  .error-message {
-    color: red;
-    font-size: 0.875em;
-    margin-top: 5px;
-  }

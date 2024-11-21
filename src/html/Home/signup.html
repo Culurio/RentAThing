@@ -39,13 +39,13 @@
               name="phone"
               placeholder="Enter phone number"
               required
-              pattern="[0-9]{10,15}"
-              title="Please enter a valid phone number with 10 to 15 digits">
+              pattern="[0-9]{9,12}"
+              title="Please enter a valid phone number with 9 to 12 digits">
 
       <label for="citizen-number">Citizen Card Number:</label>
       <input type="text" id="citizen-number" name="citizen-number" placeholder="Enter citizen number"  required>
 
-      <button type="submit" class="auth-btn" onclick=signUp()>
+      <button type="submit" class="auth-btn" onclick=signUp(event)>
         Sign Up
       </button>
     </form>
