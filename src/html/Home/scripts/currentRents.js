@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.remove();
 
             alert(`${item.productName} has been marked as returned.`); */
-            localStorage.setItem('item_to_remove', index);
+            localStorage.setItem('item_to_remove', JSON.stringify(item));
             window.location.href = "returnItem.html";
         });
 
