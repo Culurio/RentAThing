@@ -121,14 +121,11 @@ td{
   align-items: right; /* Center items horizontally */
   text-align: center;
   margin-top: 20px;
-  margin-right: 300px;
+  margin-right: 30px;
 }
 
 /* Style for the modal image */
 .modal-image {
   width: 100%; /* Take full width of the container */
   object-fit: cover;
-}
-
-.modal-name {
 }
