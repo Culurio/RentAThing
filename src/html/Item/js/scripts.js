@@ -99,9 +99,11 @@ function getDisabledDates(rentals) {
     document.querySelector(".myBtn").addEventListener("click", () => {
         if(localStorage.getItem('user') !== null){
             modal.style.display = "block";
+            document.body.classList.add('modal-open');
         }
         else{
             window.location.href = "../Home/login.html";
+            document.body.classList.remove('modal-open');
         }
     });
 
