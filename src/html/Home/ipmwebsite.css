@@ -34,9 +34,8 @@ body {
 .dates-labels{
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  gap: 175px;
-  margin-right: 535px;
+  gap: 180px;
+  margin-right: 730px;
 }
 
 .From {
