@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   font-family: "Arial", sans-serif;
 }
 
-/* Hero Section */
+
 .hero {
   background-color: #d9c7b6;
   text-align: center;
@@ -53,7 +53,7 @@ body {
   max-width: 200px;
 }
 
-/* Categories */
+
 .categories {
   text-align: center;
   background-color: #f5f2eb;
@@ -78,7 +78,7 @@ body {
   background: #b89c80;
 }
 
-/* Products */
+
 .products {
   padding: 40px 20px;
 }
@@ -301,7 +301,7 @@ textarea:focus{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Adjust the gap between elements as needed */
+  gap: 10px; 
 }
 
 .search-bar {
@@ -311,7 +311,7 @@ textarea:focus{
   max-width: 400px;
 }
 
-/* Basic styling for the product-list and rental-item cards */
+
 #product-list {
   display: flex;
   flex-wrap: wrap;

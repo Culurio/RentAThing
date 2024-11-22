@@ -40,12 +40,10 @@ function initMap() {
     console.log(`Location selected: ${selectedLocation.lat()}, ${selectedLocation.lng()}`);
   });
 
-  // Botão de confirmação
   document.getElementById('confirm-btn').addEventListener('click', () => {
     const selectedLocation = marker.getPosition();
     window.location.href = "../Home/ipmwebsite.html"
   });
 }
 
-// Inicializar o mapa quando a página é carregada
 window.onload = initMap;

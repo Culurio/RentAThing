@@ -1,7 +1,7 @@
 const ACCESS_TOKEN = 'sl.CBAJnGPZSzXsO1ibhlCdI8O146VsL7-0sYOaad4Ruz5r4KjvCS7cqDW06aGAhj_-Dwk-Qu-gEoo4752GxdDVjFxSEoWs9eecRhQcQKQuFlQsaIwE1gUkhxUAZQMdrUG_XKpkAQI5QVs27Ak';
 
 function signUp(event) {
-  event.preventDefault(); // Prevent form submission to validate fields
+  event.preventDefault(); 
 
   const name = document.getElementById('name');
   const email = document.getElementById('email');
@@ -13,57 +13,48 @@ function signUp(event) {
 
   let isValid = true;
 
-  // Reset error styles
   const fields = [name, email, password, confirmPassword, birthDate, phoneNumber, citizenNumber];
   fields.forEach(field => {
-      field.style.border = ''; // Reset border style
+      field.style.border = ''; 
   });
 
-  // Validate Full Name
   if (name.value.trim() === '') {
       name.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Email
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email.value.trim())) {
       email.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Password
   if (password.value.trim().length < 6) {
       password.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Confirm Password
   if (password.value !== confirmPassword.value) {
       confirmPassword.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Birth Date
   if (!birthDate.value) {
       birthDate.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Phone Number
   const phonePattern = /^[0-9]{9,12}$/;
   if (!phonePattern.test(phoneNumber.value.trim())) {
       phoneNumber.style.border = '2px solid red';
       isValid = false;
   }
 
-  // Validate Citizen Number
   if (citizenNumber.value.trim() === '') {
       citizenNumber.style.border = '2px solid red';
       isValid = false;
   }
 
-  // If all fields are valid, proceed
   if (isValid) {
       const user = {
           name: name.value,
@@ -76,22 +67,52 @@ function signUp(event) {
 
       localStorage.setItem('user', JSON.stringify(user));
 
-      // Redirect to the next page
       window.location.href = 'map.html';
   } else {
       alert('Please correct the highlighted fields.');
   }
 }
 
-function login(){
-  if(localStorage.getItem('user') !== null){
-    window.location.href = '../Home/map.html';
-  }else{
-    const LOGIN = document.getElementById('auth-container');
-    const errorMessage = document.createElement('p');
-    errorMessage.className = 'error-message';
-    errorMessage.textContent = 'The account does not exist.';
-    LOGIN.appendChild(errorMessage);
+function login() {
+  const authContainer = document.getElementById('auth-container');
+  const previousErrors = document.querySelectorAll('.error-message');
+  previousErrors.forEach(error => error.remove());
+
+  let isValid = true;
+  const emailField = document.getElementById('email');
+  const passwordField = document.getElementById('password');
+
+  emailField.style.border = '';
+  passwordField.style.border = '';
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailField.value.trim())) {
+      const emailError = document.createElement('p');
+      emailError.className = 'error-message';
+      emailError.textContent = 'Please enter a valid email address.';
+      emailField.style.border = '2px solid red';
+      emailField.after(emailError);
+      isValid = false;
+  }
+
+  if (passwordField.value.trim().length < 6) {
+      const passwordError = document.createElement('p');
+      passwordError.className = 'error-message';
+      passwordError.textContent = 'Password must be at least 6 characters long.';
+      passwordField.style.border = '2px solid red';
+      passwordField.after(passwordError);
+      isValid = false;
+  }
+
+  if (isValid) {
+      if (localStorage.getItem('user') !== null) {
+          window.location.href = '../Home/map.html';
+      } else {
+          const accountError = document.createElement('p');
+          accountError.className = 'error-message';
+          accountError.textContent = 'The account does not exist.';
+          authContainer.appendChild(accountError);
+      }
   }
 }
 
