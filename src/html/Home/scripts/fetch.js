@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.dataset.img = product.imageUrl;
                 card.dataset.description = product.description;
                 card.dataset.category = product.category;
+                card.dataset.rating = product.rating;
 
                 productGrid.appendChild(clone);
             });
@@ -40,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         price: card.dataset.price,
                         img: card.dataset.img,
                         description: card.dataset.description,
-                        category: card.dataset.category
+                        category: card.dataset.category,
+                        rating: card.dataset.rating
                     };
 
                     localStorage.setItem("productDetails", JSON.stringify(productDetails));

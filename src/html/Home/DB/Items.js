@@ -1,11 +1,12 @@
 class Item {
-    constructor(id, name, price, description, imageUrl, category) {
+    constructor(id, name, price, description, imageUrl, category, rating) {
         this.id = id;
         this.name = name;
         this.price = parseFloat(price);
         this.description = description;
         this.imageUrl = imageUrl;
         this.category = category;
+        this.rating = rating
     }
 }
 
@@ -22,7 +23,8 @@ export class ItemManager {
                 item.price,
                 item.description,
                 item.image_url,
-                item.category
+                item.category,
+                item.rating
             );
             this.items.set(item.id, newItem);
         });
