@@ -1,8 +1,12 @@
-function applyFilters() {
+function applyFilters(x) {
+  let categoryFilter = document.getElementById('category-filter').value;
+  if (x !== undefined) {
+    categoryFilter = x;
+    document.getElementById('category-filter').value = x;
+  }
   const searchBar = document.getElementById('search-bar').value;
   const fromDate = document.getElementById('from-date').value;
   const toDate = document.getElementById('to-date').value;
-  const categoryFilter = document.getElementById('category-filter').value;
   const orderBy = document.getElementById('order-by').value;
 
   getItems(searchBar, fromDate, toDate, categoryFilter, orderBy);
@@ -16,7 +20,9 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
       productList.innerHTML = '';
 
       const filteredProducts = products.filter(product => {
-        return (categoryFilter === 'all' || product.category === categoryFilter) &&
+        console.log(product.category);
+        console.log(categoryFilter);
+        return (categoryFilter === 'all' || product.category.toLowerCase() === categoryFilter) &&
           (!searchBar || product.name.toLowerCase().includes(searchBar.toLowerCase())) &&
           (!fromDate || new Date(product.date) >= new Date(fromDate)) &&
           (!toDate || new Date(product.date) <= new Date(toDate));
