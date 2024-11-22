@@ -32,12 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
         onDayCreate: (dObj, dStr, fp, dayElem) => {
             // Check if the day is disabled
             if (dayElem.classList.contains("flatpickr-disabled")) {
-                dayElem.style.backgroundColor = "red"; // Make disabled dates red
-                dayElem.style.borderRadius = "50%"; // Optional: make it look nicer
-                dayElem.style.color = "white"; // Optional: make text stand out
+                dayElem.style.backgroundColor = "white"; // Make disabled dates red
+                dayElem.style.borderRadius = "25%"; // Optional: make it look nicer
+                dayElem.style.color = "red"; // Optional: make text stand out
             } else {
-                dayElem.style.backgroundColor = "lightgreen"; // Make available dates green
-                dayElem.style.borderRadius = "50%"; // Optional: make it look nicer
+                dayElem.style.backgroundColor = "white"; // Make available dates green
+                dayElem.style.borderRadius = "25%";
+                dayElem.style.color = "green"; 
             }
         },
     });
