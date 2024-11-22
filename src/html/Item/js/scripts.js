@@ -69,6 +69,7 @@ function getDisabledDates(rentals) {
   
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
+        document.body.classList.remove('modal-open');
     });
 
 
@@ -90,6 +91,7 @@ function getDisabledDates(rentals) {
             localStorage.setItem("rentalItems", JSON.stringify(existingRentals));
 
             modal.style.display = "none"; 
+            document.body.classList.remove('modal-open');
         } else {
             alert("Please select a date range.");
         }
@@ -103,7 +105,6 @@ function getDisabledDates(rentals) {
         }
         else{
             window.location.href = "../Home/login.html";
-            document.body.classList.remove('modal-open');
         }
     });
 
@@ -111,6 +112,7 @@ function getDisabledDates(rentals) {
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
+            document.body.classList.remove('modal-open');
         }
     });
 
