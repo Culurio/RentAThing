@@ -1,7 +1,7 @@
 const ACCESS_TOKEN = 'sl.CBAJnGPZSzXsO1ibhlCdI8O146VsL7-0sYOaad4Ruz5r4KjvCS7cqDW06aGAhj_-Dwk-Qu-gEoo4752GxdDVjFxSEoWs9eecRhQcQKQuFlQsaIwE1gUkhxUAZQMdrUG_XKpkAQI5QVs27Ak';
 
-function signUp(event) {
-  event.preventDefault(); 
+function signUp(event) { 
+  event.preventDefault();
 
   const name = document.getElementById('name');
   const email = document.getElementById('email');
@@ -15,7 +15,7 @@ function signUp(event) {
 
   const fields = [name, email, password, confirmPassword, birthDate, phoneNumber, citizenNumber];
   fields.forEach(field => {
-      field.style.border = ''; 
+      field.style.border = '';
   });
 
   if (name.value.trim() === '') {
@@ -105,13 +105,23 @@ function login() {
   }
 
   if (isValid) {
-      if (localStorage.getItem('user') !== null) {
-          window.location.href = '../Home/map.html';
-      } else {
-          const accountError = document.createElement('p');
-          accountError.className = 'error-message';
-          accountError.textContent = 'The account does not exist.';
-          authContainer.appendChild(accountError);
+      if(localStorage.getItem('user') !== null){
+        window.location.href = '../Home/map.html';
+      }else{
+          const LOGIN = document.getElementById('auth-container');
+          
+          const existingErrorMessage = document.querySelector('.error-message');
+
+          if (existingErrorMessage)
+            existingErrorMessage.remove();
+
+          const errorMessage = document.createElement('p');
+          errorMessage.className = 'error-message';
+          errorMessage.textContent = 'The account does not exist.';
+          
+          setTimeout(() => {
+            LOGIN.appendChild(errorMessage);
+          }, 100);
       }
   }
 }
