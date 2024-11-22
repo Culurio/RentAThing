@@ -34,6 +34,7 @@ function account() {
 
 function logout() {
     localStorage.clear();
+    window.location.href = '../Home/ipmwebsite.html';
     loadHeader();
 }
 

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "adminadmin",
+    "birthDate": "17/11/2002",
+    "phoneNumber": "999999999",
+    "citizenNumber": "999999999"
+}]
