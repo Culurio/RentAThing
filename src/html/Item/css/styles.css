@@ -100,6 +100,7 @@ section.py-5 {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  border-radius: 15px
 }
 
 /* The Close Button */
@@ -115,4 +116,28 @@ section.py-5 {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.flatpickr-calendar {
+  font-family: 'Arial';
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flatpickr-day.selected {
+  background-color: #4b3621 !important; /* Change to your desired color */
+  color: white !important; /* Ensure text is readable */
+}
+
+/* Change the background color of the dates within the selected range */
+.flatpickr-day.inRange {
+  background-color: #d9c7b6 !important; /* Change to your desired color */
+  color: white !important;
+}
+
+/* Optional: Change the hover color for better user experience */
+.flatpickr-day:hover {
+  background-color: #4b3621 !important; /* Change to your desired color */
+  color: white !important; /* Ensure text is readable */
 }
