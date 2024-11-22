@@ -69,6 +69,9 @@ td{
   border: 1px solid #d9c7b6;
   box-shadow: 0 4px 8px rgba(75, 54, 33, 0.1);
   border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 0fr));
+  justify-content: space-between;
 }
 
 .return_item_container{
@@ -90,7 +93,7 @@ td{
 }
 
 #returnItem-btn{
-  margin-top: 150px;
+  margin-top: 100px;
   width: 295px;
   background-color: #4b3621;
   border: transparent;
@@ -100,6 +103,7 @@ td{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   transition: 0.2s ease-in;
+  align-items: flex-start;
 }
 
 #returnItem-btn:hover{
@@ -107,4 +111,24 @@ td{
   color: white;
   transition: 0.2s ease-out;
   cursor: pointer;
+}
+
+.stars{
+  margin-top: 40px;
+}
+
+.modal-image-container {
+  align-items: right; /* Center items horizontally */
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 300px;
+}
+
+/* Style for the modal image */
+.modal-image {
+  width: 100%; /* Take full width of the container */
+  object-fit: cover;
+}
+
+.modal-name {
 }

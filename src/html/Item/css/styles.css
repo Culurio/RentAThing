@@ -141,3 +141,7 @@ section.py-5 {
   background-color: #4b3621 !important; 
   color: white !important; 
 }
+
+.stars .checked {
+  color: orange;
+}
