@@ -100,7 +100,12 @@ function getDisabledDates(rentals) {
 
     // Open modal logic (if needed for your button)
     document.querySelector(".myBtn").addEventListener("click", () => {
-        modal.style.display = "block";
+        if(localStorage.getItem('user') !== null){
+            modal.style.display = "block";
+        }
+        else{
+            window.location.href = "../Home/login.html";
+        }
     });
 
     // Close modal on clicking outside
