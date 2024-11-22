@@ -53,10 +53,8 @@
   /* Profile rents container */
   .profile-rents {
     display: flex;
-    justify-content: space-between;
     align-items: left;
     width: 100%;
-    max-width: 2000px;
     margin-top: 20px;
   }
 
@@ -77,7 +75,9 @@
   }
 
   .items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between product cards */
+    justify-content: center; /* Center the product cards */
+    padding: 20px;
   }

@@ -1,25 +1,86 @@
 const ACCESS_TOKEN = 'sl.CBAJnGPZSzXsO1ibhlCdI8O146VsL7-0sYOaad4Ruz5r4KjvCS7cqDW06aGAhj_-Dwk-Qu-gEoo4752GxdDVjFxSEoWs9eecRhQcQKQuFlQsaIwE1gUkhxUAZQMdrUG_XKpkAQI5QVs27Ak';
 
-function signUp() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const birthDate = document.getElementById('birthdate').value;
-    const phoneNumber = document.getElementById('phone').value;
-    const citizenNumber = document.getElementById('citizen-number').value;
+function signUp(event) {
+  event.preventDefault(); // Prevent form submission to validate fields
 
-    const user = {
-        name: name,
-        email: email,
-        password: password,
-        birthDate: birthDate,
-        phoneNumber: phoneNumber,
-        citizenNumber: citizenNumber
-    };
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const confirmPassword = document.getElementById('confirm-password');
+  const birthDate = document.getElementById('birthdate');
+  const phoneNumber = document.getElementById('phone');
+  const citizenNumber = document.getElementById('citizen-number');
 
-    localStorage.setItem('user', JSON.stringify(user));
+  let isValid = true;
 
-    //addAccount(user);
+  // Reset error styles
+  const fields = [name, email, password, confirmPassword, birthDate, phoneNumber, citizenNumber];
+  fields.forEach(field => {
+      field.style.border = ''; // Reset border style
+  });
+
+  // Validate Full Name
+  if (name.value.trim() === '') {
+      name.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email.value.trim())) {
+      email.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Password
+  if (password.value.trim().length < 6) {
+      password.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Confirm Password
+  if (password.value !== confirmPassword.value) {
+      confirmPassword.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Birth Date
+  if (!birthDate.value) {
+      birthDate.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Phone Number
+  const phonePattern = /^[0-9]{9,12}$/;
+  if (!phonePattern.test(phoneNumber.value.trim())) {
+      phoneNumber.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // Validate Citizen Number
+  if (citizenNumber.value.trim() === '') {
+      citizenNumber.style.border = '2px solid red';
+      isValid = false;
+  }
+
+  // If all fields are valid, proceed
+  if (isValid) {
+      const user = {
+          name: name.value,
+          email: email.value,
+          password: password.value,
+          birthDate: birthDate.value,
+          phoneNumber: phoneNumber.value,
+          citizenNumber: citizenNumber.value,
+      };
+
+      localStorage.setItem('user', JSON.stringify(user));
+
+      // Redirect to the next page
+      window.location.href = 'map.html';
+  } else {
+      alert('Please correct the highlighted fields.');
+  }
 }
 
 function login(){
