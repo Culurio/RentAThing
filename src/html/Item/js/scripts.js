@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper function to generate stars based on the rating
     function generateStars(rating) {
-        const filledStars = '<i class="bi bi-star-fill" style="color: gold;"></i>'.repeat(rating); // Filled stars
+        const filledStars = '<i class="bi bi-star-fill" style="color: #4b3621;"></i>'.repeat(rating); // Filled stars
         const emptyStars = '<i class="bi bi-star" style="color: gray;"></i>'.repeat(5 - rating); // Empty stars
         return filledStars + emptyStars;
     }
