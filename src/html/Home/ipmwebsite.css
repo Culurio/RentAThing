@@ -31,6 +31,14 @@ body {
   border-radius: 5px;
 }
 
+.dates-labels{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 175px;
+  margin-right: 535px;
+}
+
 .From {
   padding: 10px;
   margin-top: 20px;
