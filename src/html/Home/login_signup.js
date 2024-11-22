@@ -1,7 +1,18 @@
 const ACCESS_TOKEN = 'sl.CBAJnGPZSzXsO1ibhlCdI8O146VsL7-0sYOaad4Ruz5r4KjvCS7cqDW06aGAhj_-Dwk-Qu-gEoo4752GxdDVjFxSEoWs9eecRhQcQKQuFlQsaIwE1gUkhxUAZQMdrUG_XKpkAQI5QVs27Ak';
+let users = [];
 
-function signUp(event) { 
-  event.preventDefault();
+
+async function loadUsers() {
+    const response = await fetch('./DB/accounts.JSON');
+    if (response.ok) {
+        users = await response.json();
+        console.log("Users loaded:", users);
+    } else {
+        console.error("Failed to load users from accounts.json:", response.status);
+    }
+}
+function signUp(event) {
+  event.preventDefault(); 
 
   const name = document.getElementById('name');
   const email = document.getElementById('email');
@@ -82,11 +93,14 @@ function login() {
   const emailField = document.getElementById('email');
   const passwordField = document.getElementById('password');
 
+  const email = emailField.value.trim(); 
+  const password = passwordField.value.trim(); 
+
   emailField.style.border = '';
   passwordField.style.border = '';
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailField.value.trim())) {
+  if (!emailPattern.test(email)) {
       const emailError = document.createElement('p');
       emailError.className = 'error-message';
       emailError.textContent = 'Please enter a valid email address.';
@@ -95,7 +109,7 @@ function login() {
       isValid = false;
   }
 
-  if (passwordField.value.trim().length < 6) {
+  if (password.length < 6) {
       const passwordError = document.createElement('p');
       passwordError.className = 'error-message';
       passwordError.textContent = 'Password must be at least 6 characters long.';
@@ -105,27 +119,19 @@ function login() {
   }
 
   if (isValid) {
-      if(localStorage.getItem('user') !== null){
-        window.location.href = '../Home/map.html';
-      }else{
-          const LOGIN = document.getElementById('auth-container');
-          
-          const existingErrorMessage = document.querySelector('.error-message');
-
-          if (existingErrorMessage)
-            existingErrorMessage.remove();
-
-          const errorMessage = document.createElement('p');
-          errorMessage.className = 'error-message';
-          errorMessage.textContent = 'The account does not exist.';
-          
-          setTimeout(() => {
-            LOGIN.appendChild(errorMessage);
-          }, 100);
+    const user = users.find(user => user.email === email && user.password === password);
+      if (user) {
+          window.location.href = '../Home/map.html';
+          localStorage.setItem('user', JSON.stringify(user));
+      } else {
+          const accountError = document.createElement('p');
+          accountError.className = 'error-message';
+          accountError.textContent = 'The account does not exist.';
+          authContainer.appendChild(accountError);
       }
   }
 }
-
+loadUsers();
 function addAccount(newAccount) {
         const filePath = '/accounts.json';
         const jsonData = JSON.stringify(newAccount)
