@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f9f6f1;
   }
   
   .map-container {
@@ -13,7 +13,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(75, 54, 33, 0.1);
   }
   
   #map {
@@ -21,19 +21,22 @@ body {
     height: 400px;
     margin-top: 20px;
     border-radius: 8px;
+    border: 1px solid #d9c7b6;
   }
   
   #confirm-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #4b3621;
     color: #fff;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
   }
   
   #confirm-btn:hover {
-    background-color: #0056b3;
+    background-color: #6f4e37;
   }
   
