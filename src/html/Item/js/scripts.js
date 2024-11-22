@@ -92,7 +92,6 @@ function getDisabledDates(rentals) {
             existingRentals.push(rentalDetails);
             localStorage.setItem("rentalItems", JSON.stringify(existingRentals));
 
-            alert("Rental date range and item saved successfully!");
             modal.style.display = "none"; // Close the modal
         } else {
             alert("Please select a date range.");
