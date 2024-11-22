@@ -8,7 +8,5 @@ function returnItem(){
     
     localStorage.setItem("rentalItems", JSON.stringify(updatedItems));
     alert(`${item.productName} has been marked as returned.`);
-
-
     window.location.href = "myCurrentRents.html";
 }
