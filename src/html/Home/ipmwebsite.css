@@ -123,6 +123,8 @@ body {
   border-radius: 8px;
   background-color: #f5f2eb;
   text-align: center;
+  height: 370px;
+  max-height: 370px;
 }
 
 .auth-container h2 {
