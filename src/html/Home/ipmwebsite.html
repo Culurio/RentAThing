@@ -20,9 +20,14 @@
   </script>
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <div class="dates-labels">
+      <label id="from-date-label" for="from-date">From</label>
+      <label id="to-date-label" for="to-date">To</label>
+    </div>
     <div class="search-container">
       <input type="text" placeholder="Search for items..." class="search-bar" id="search-bar">
       <input type="date" placeholder="From" class="From" id="from-date">
+      
       <input type="date" placeholder="To" class="To" id="to-date">
       <button type="submit" onclick="applyFilters()" class="search-button" id="search-button"> 
         <img src="data/search_icon.jpg" alt="search-button">
