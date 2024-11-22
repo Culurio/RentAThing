@@ -6,6 +6,7 @@
     <title>Return item - RentStuff</title>
     <link rel="stylesheet" href="ipmwebsite.css">
     <link rel="stylesheet" href="currentRents.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/fetch.js"></script>
     <script src="scripts/returnItem.js"></script>
 </head>
@@ -44,14 +45,31 @@
                     <option value="locker">Locker</option>
             </select>
         </div>
-        <br>
-        <button id="returnItem-btn" type="submit">Return item</button>
+        <div class="stars">
+          <span class="fa fa-star 1" id="fa fa-star 1" onclick="stars(1)"></span>
+          <span class="fa fa-star 2" id="fa fa-star 2" onclick="stars(2)"></span>
+          <span class="fa fa-star 3" id="fa fa-star 3" onclick="stars(3)"></span>
+          <span class="fa fa-star 4" id="fa fa-star 4" onclick="stars(4)"></span>
+          <span class="fa fa-star 5" id="fa fa-star 5" onclick="stars(5)"></span>        
+        </div>
+        <div class="rate">
+          <p>Rate this item :)</p>
+          <br>
+          <button id="returnItem-btn" type="submit">Return item</button>
         </div>
       </form>
+    </div>
+    <div class="modal-image-container">
+      <img src="https://dummyimage.com/200x200/dee2e6/6c757d.jpg" alt="Product Image"
+          class="modal-image" />
+          <span class="modal-name" style="color: #4b3621; font-weight: bold; font-size: 1.8rem;">Product Name</span>
     </div>
   </div>
   <script>
     const form = document.getElementById('return-form');
+    const item = JSON.parse(localStorage.getItem("item_to_remove"));
+    document.querySelector(".modal-image").src = item.productImage;
+    document.querySelector(".modal-name").textContent = item.productName;
 
     form.addEventListener('submit', (event) => {
         if (!form.checkValidity()) {
