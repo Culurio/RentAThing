@@ -34,11 +34,12 @@
       <label for="category-filter">Filter by Category:</label>
       <select id="category-filter" onchange=applyFilters()>
           <option value="all">All Categories</option>
-          <option value="house">House</option>
-          <option value="camera">Camera</option>
-          <option value="tools">Tools</option>
-          <option value="music">Music</option>
-          <option value="car">Car</option>
+          <option value="houses">Houses</option>
+          <option value="electronics">Electronics</option>
+          <option value="tools & equipment">Tools & Equipment</option>
+          <option value="party & events">Party & Events</option>
+          <option value="transportation">Transportation</option>
+          <option value="outdoor & camping">Outdoor & Camping</option>
           <option value="others">Others</option>
       </select>
   </div>
@@ -61,12 +62,13 @@
   <!-- Popular Categories -->
   <section id="categories" class="categories">
     <h3>Popular Categories</h3>
+    <br/>
     <div class="category-list">
-      <div class="category-item">Party & Events</div>
-      <div class="category-item">Electronics</div>
-      <div class="category-item">Furniture & Decor</div>
-      <div class="category-item">Outdoor & Camping</div>
-      <div class="category-item">Tools & Equipment</div>
+      <div class="category-item" onclick="applyFilters('party & events')">Party & Events</div>
+      <div class="category-item" onclick="applyFilters('electronics')">Electronics</div>
+      <div class="category-item" onclick="applyFilters('transportation')">Transportation</div>
+      <div class="category-item" onclick="applyFilters('outdoor & camping')">Outdoor & Camping</div>
+      <div class="category-item" onclick="applyFilters('tools & equipment')">Tools & Equipment</div>
     </div>
   </section>
 
