@@ -22,23 +22,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const rentalDates = JSON.parse(localStorage.getItem("rentalItems")) || [];
 
     flatpickr("#rentalDateRange", {
-        mode: "range", 
-        dateFormat: "Y-m-d", 
-        minDate: "today", 
-        disable: getDisabledDates(rentalDates), 
-        onDayCreate: (dObj, dStr, fp, dayElem) => {
-           
-            if (dayElem.classList.contains("flatpickr-disabled")) {
-                dayElem.style.backgroundColor = "white"; 
-                dayElem.style.borderRadius = "25%"; 
-                dayElem.style.color = "red"; 
+        mode: "range",
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        disable: getDisabledDates(rentalDates),
+        onChange: (selectedDates) => {
+            if (selectedDates.length === 2) { // Ensure both start and end dates are selected
+                const [startDate, endDate] = selectedDates;
+                const daysCount = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Calculate the number of days
+                const dailyPrice = parseFloat(productDetails.price); // Parse the price as a number
+                const totalPrice = dailyPrice * daysCount; // Calculate the total price
+                
+                document.querySelector(".modal-price").textContent = `€${totalPrice}.00/day`;
             } else {
-                dayElem.style.backgroundColor = "white"; 
+                document.querySelector(".modal-price").textContent = `€${productDetails.price}.00/day`; // Reset to default price
+            }
+        },
+        onDayCreate: (dObj, dStr, fp, dayElem) => {
+            if (dayElem.classList.contains("flatpickr-disabled")) {
+                dayElem.style.backgroundColor = "white";
                 dayElem.style.borderRadius = "25%";
-                dayElem.style.color = "green"; 
+                dayElem.style.color = "red";
+            } else {
+                dayElem.style.backgroundColor = "white";
+                dayElem.style.borderRadius = "25%";
+                dayElem.style.color = "green";
             }
         },
     });
+    
     
 
 
