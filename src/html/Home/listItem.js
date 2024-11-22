@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('listItemForm');
     if (form) {
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-            addItem(); // Call the addItem function
+            event.preventDefault(); 
+            addItem(); 
         });
     } else {
         console.error('Form with ID "listItemForm" not found');
@@ -19,7 +19,6 @@ function addItem() {
     const description = document.getElementById('item_description').value;
     const imageInput = document.getElementById('item_photos');
 
-    // Check if a file is selected
     if (imageInput.files.length === 0) {
         alert("Please upload a photo of the item.");
         return;
@@ -36,7 +35,6 @@ function addItem() {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
-            // Set the canvas dimensions to the desired size
             const maxWidth = 800;
             const maxHeight = 800;
             let width = image.width;
@@ -59,8 +57,7 @@ function addItem() {
 
             ctx.drawImage(image, 0, 0, width, height);
 
-            // Convert the canvas to a base64-encoded string
-            const compressedImage = canvas.toDataURL('image/jpeg', 0.7); // Adjust the quality as needed
+            const compressedImage = canvas.toDataURL('image/jpeg', 0.7); 
 
             const item = {
                 name: name,
@@ -69,18 +66,15 @@ function addItem() {
                 condition: condition,
                 price: price,
                 description: description,
-                image: compressedImage // Store the compressed base64-encoded image data
+                image: compressedImage 
             };
 
-            // Retrieve the existing items array from localStorage
             let itemsArray = JSON.parse(localStorage.getItem('adds')) || [];
 
-            // Check if itemsArray is an array
             if (!Array.isArray(itemsArray)) {
                 itemsArray = [];
             }
 
-            // Add the new item to the array
             itemsArray.push(item);
 
             localStorage.setItem('adds', JSON.stringify(itemsArray));
@@ -89,6 +83,5 @@ function addItem() {
         };
     };
 
-    // Read the file as a data URL (base64-encoded string)
     reader.readAsDataURL(file);
 }

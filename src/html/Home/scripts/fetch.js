@@ -8,14 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const productGrid = document.querySelector(".product-grid");
             const template = document.getElementById("product-card-template").content;
 
-            // Initialize ItemManager and load products
             const itemManager = new ItemManager();
             itemManager.loadItems(products);
 
-            // Get 6 random items
             const randomProducts = itemManager.getRandomItems(6);
 
-            // Populate product cards dynamically
             randomProducts.forEach((product) => {
                 const clone = template.cloneNode(true);
                 clone.querySelector("img").src = product.imageUrl;
@@ -34,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 productGrid.appendChild(clone);
             });
 
-            // Add event listeners to product cards
             const productCards = document.querySelectorAll(".product-card");
 
             productCards.forEach((card) => {

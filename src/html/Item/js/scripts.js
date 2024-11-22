@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Load product details from localStorage
     const productDetails = JSON.parse(localStorage.getItem("productDetails"));
 
     if (productDetails) {
@@ -11,32 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".modal-price").textContent = "$"+productDetails.price+".00/day";
     }
 
-    // Modal and form logic
     const modal = document.getElementById("myModal");
     const closeModal = document.querySelector(".close");
     const rentalForm = document.getElementById("rentalForm");
 
-    // Product details (example: these would come dynamically in real scenarios)
-    const productName = document.querySelector(".fw-bolder").textContent; // Get product name
-    const productPrice = document.querySelector(".fs-5 span:last-child").textContent; // Get product price
-    const productImage = document.querySelector(".card-img-top").src; // Get product image
+    const productName = document.querySelector(".fw-bolder").textContent;
+    const productPrice = document.querySelector(".fs-5 span:last-child").textContent; 
+    const productImage = document.querySelector(".card-img-top").src;
 
-    // Fetch rental dates from localStorage
+    
     const rentalDates = JSON.parse(localStorage.getItem("rentalItems")) || [];
 
     flatpickr("#rentalDateRange", {
-        mode: "range", // Enables range selection
-        dateFormat: "Y-m-d", // Format of the date
-        minDate: "today", // Optional: prevent past dates
-        disable: getDisabledDates(rentalDates), // Fetch dates that should be disabled
+        mode: "range", 
+        dateFormat: "Y-m-d", 
+        minDate: "today", 
+        disable: getDisabledDates(rentalDates), 
         onDayCreate: (dObj, dStr, fp, dayElem) => {
-            // Check if the day is disabled
+           
             if (dayElem.classList.contains("flatpickr-disabled")) {
-                dayElem.style.backgroundColor = "white"; // Make disabled dates red
-                dayElem.style.borderRadius = "25%"; // Optional: make it look nicer
-                dayElem.style.color = "red"; // Optional: make text stand out
+                dayElem.style.backgroundColor = "white"; 
+                dayElem.style.borderRadius = "25%"; 
+                dayElem.style.color = "red"; 
             } else {
-                dayElem.style.backgroundColor = "white"; // Make available dates green
+                dayElem.style.backgroundColor = "white"; 
                 dayElem.style.borderRadius = "25%";
                 dayElem.style.color = "green"; 
             }
@@ -44,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 
-// Function to extract disabled dates from rental items
+
 function getDisabledDates(rentals) {
     const disabledDates = [];
     rentals.forEach((rental) => {
@@ -52,31 +49,31 @@ function getDisabledDates(rentals) {
         let startDate, endDate;
 
         if (dateRange.includes(" to ")) {
-            [startDate, endDate] = dateRange.split(" to "); // Split into start and end dates
+            [startDate, endDate] = dateRange.split(" to "); 
         } else {
-            startDate = endDate = dateRange; // Single day case
+            startDate = endDate = dateRange; 
         }
 
         const current = new Date(startDate);
         const end = new Date(endDate);
 
         while (current <= end) {
-            disabledDates.push(new Date(current).toISOString().split("T")[0]); // Format date
-            current.setDate(current.getDate() + 1); // Increment by one day
+            disabledDates.push(new Date(current).toISOString().split("T")[0]); 
+            current.setDate(current.getDate() + 1); 
         }
     });
     return disabledDates;
 }
 
 
-    // Close the modal
+  
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
     });
 
-    // Submit form logic
+
     rentalForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent form default submission behavior
+        event.preventDefault();
         const rentalDateRange = document.getElementById("rentalDateRange").value;
 
         if (rentalDateRange) {
@@ -87,18 +84,18 @@ function getDisabledDates(rentals) {
                 rentalDateRange,
             };
 
-            // Save to localStorage
+            
             const existingRentals = JSON.parse(localStorage.getItem("rentalItems")) || [];
             existingRentals.push(rentalDetails);
             localStorage.setItem("rentalItems", JSON.stringify(existingRentals));
 
-            modal.style.display = "none"; // Close the modal
+            modal.style.display = "none"; 
         } else {
             alert("Please select a date range.");
         }
     });
 
-    // Open modal logic (if needed for your button)
+   
     document.querySelector(".myBtn").addEventListener("click", () => {
         if(localStorage.getItem('user') !== null){
             modal.style.display = "block";
@@ -108,14 +105,14 @@ function getDisabledDates(rentals) {
         }
     });
 
-    // Close modal on clicking outside
+  
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     });
 
-    // Load products into the grid
+    
     const productGrid = document.querySelector(".product-grid");
     const template = document.getElementById("product-card-template").content;
     const products = document.querySelectorAll(".product-card[data-name]");
@@ -136,7 +133,6 @@ function getDisabledDates(rentals) {
         productGrid.appendChild(clone);
     });
 
-    // Add click events to product cards
     const productCards = document.querySelectorAll(".product-card");
 
     productCards.forEach((card) => {
