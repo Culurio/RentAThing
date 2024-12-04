@@ -52,6 +52,7 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
         productItem.dataset.img = product.image_url;
         productItem.dataset.description = product.description;
         productItem.dataset.category = product.category;
+        productItem.dataset.rating = product.rating;
 
         productList.appendChild(productItem);
 
@@ -62,7 +63,8 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
             price: productItem.dataset.price,
             img: productItem.dataset.img,
             description: productItem.dataset.description,
-            category: productItem.dataset.category
+            category: productItem.dataset.category,
+            rating: productItem.dataset.rating
           };
           localStorage.setItem("productDetails", JSON.stringify(productDetails));
 

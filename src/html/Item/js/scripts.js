@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const stars = generateStars(productDetails.rating);
         document.querySelector(".display-5").innerHTML = `${productDetails.name} ${stars}`; // Update title with stars
 
-        document.querySelector(".fs-5 span:first-child").textContent = "€" + productDetails.price + ".00/day";
+        document.querySelector(".fs-5 span:first-child").textContent = "€" + productDetails.price + "/day";
         document.querySelector(".lead").textContent = productDetails.description;
         document.querySelector(".modal-image").src = productDetails.img;
-        document.querySelector(".modal-price").textContent = "€" + productDetails.price + ".00/day";
+        document.querySelector(".modal-price").textContent = "€" + productDetails.price + "/day";
     }
 
     // Helper function to generate stars based on the rating
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 document.querySelector(".modal-price").textContent = `€${totalPrice}.00/day`;
             } else {
-                document.querySelector(".modal-price").textContent = `€${productDetails.price}.00/day`;
+                document.querySelector(".modal-price").textContent = `€${productDetails.price}/day`;
             }
         },
         onDayCreate: (dObj, dStr, fp, dayElem) => {

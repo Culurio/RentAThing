@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 clone.querySelector("img").src = product.imageUrl;
                 clone.querySelector("img").alt = product.name;
                 clone.querySelector(".product-name").textContent = product.name;
-                clone.querySelector(".product-price").textContent = `$${product.price.toFixed(2)}/day`;
+                clone.querySelector(".product-price").textContent = `€${product.price.toFixed(2)}/day`;
 
                 const card = clone.querySelector(".product-card");
                 card.dataset.id = product.id;
                 card.dataset.name = product.name;
-                card.dataset.price = product.price;
+                card.dataset.price = product.price.toFixed(2);
                 card.dataset.img = product.imageUrl;
                 card.dataset.description = product.description;
                 card.dataset.category = product.category;
