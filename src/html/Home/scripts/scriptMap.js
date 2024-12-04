@@ -35,7 +35,12 @@ function initMap() {
 
   document.getElementById('confirm-btn').addEventListener('click', () => {
     const selectedLocation = marker.getPosition();
-    window.location.href = "../Home/ipmwebsite.html"
+    if(localStorage.getItem("productDetails") != null){
+      window.location.href =   "../Item/Item.html"; 
+
+    }else{
+      window.location.href =   "../Home/ipmwebsite.html"
+    }
   });
 }
 
