@@ -162,6 +162,39 @@ body {
   cursor: pointer;
 }
 
+.sign-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #d9c7b6;
+  border-radius: 8px;
+  background-color: #f5f2eb;
+  text-align: center;
+  height: 800px;
+  max-height: 800px;
+}
+
+.sign-container h2 {
+  margin-bottom: 20px;
+}
+
+.sign-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-container label {
+  margin: 10px 0 5px;
+  background-color: #f5f2eb;
+}
+
+.sign-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d9c7b6;
+  border-radius: 5px;
+}
+
 label {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
