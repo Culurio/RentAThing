@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             modal.style.display = "none";
             document.body.classList.remove('modal-open');
+            window.location.href = "../Home/myCurrentRents.html"
         } else {
             alert("Please select a date range.");
         }
