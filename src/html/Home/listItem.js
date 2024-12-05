@@ -78,6 +78,8 @@ function addItem() {
             itemsArray.push(item);
 
             localStorage.setItem('adds', JSON.stringify(itemsArray));
+            
+            alert("Item returned successfully!");
 
             window.location.href = "../Home/profile.html";
         };
