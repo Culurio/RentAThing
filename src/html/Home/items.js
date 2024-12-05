@@ -20,8 +20,6 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
       productList.innerHTML = '';
 
       const filteredProducts = products.filter(product => {
-        console.log(product.category);
-        console.log(categoryFilter);
         return (categoryFilter === 'all' || product.category.toLowerCase() === categoryFilter) &&
           (!searchBar || product.name.toLowerCase().includes(searchBar.toLowerCase())) &&
           (!fromDate || new Date(product.date) >= new Date(fromDate)) &&
@@ -32,6 +30,18 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
         filteredProducts.sort((a, b) => b.price - a.price);
       } else if (orderBy === 'Price: Low-High') {
         filteredProducts.sort((a, b) => a.price - b.price);
+      }
+
+      if(filteredProducts.length === 0) {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-card';
+
+        productItem.innerHTML = `
+          <h2>No products found</h2>
+        `;
+
+        productList.appendChild(productItem);
+
       }
 
       filteredProducts.forEach(product => {
