@@ -32,7 +32,7 @@ function getItems(searchBar, fromDate, toDate, categoryFilter, orderBy) {
         filteredProducts.sort((a, b) => a.price - b.price);
       }
 
-      if(filteredProducts.length === 0) {
+      if(filteredProducts.length === 0 && categoryFilter !== 'all' && searchBar.toLowerCase() !== null) {
         const productItem = document.createElement('div');
         productItem.className = 'product-card';
 
